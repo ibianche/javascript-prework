@@ -39,3 +39,29 @@ if(randomNumber == 3){
 
 printMessage('Twój ruch to: ' + playerMove);
 
+
+
+
+if( computerMove == 'kamień' && playerMove == 'papier'){
+  printMessage('Ty wygrywasz!');
+}
+
+if( computerMove == 'papier' && playerMove == 'nożyce'){
+  printMessage('Ty wygrywasz!');
+}
+
+if( computerMove == 'papier' && playerMove == 'papier'){
+  printMessage('Remis!');
+}
+if( computerMove == 'nożyce' && playerMove == 'papier'){
+  printMessage('Przegrałeś!');
+}
+if( computerMove == 'kamień, papier, nożyce' && playerMove == 'nieznany ruch'){
+  printMessage('Pomyłka!');
+}
+
+
+
+
+
+
