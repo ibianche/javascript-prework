@@ -49,15 +49,22 @@ else if( computerMove == 'papier' && playerMove == 'nożyce'){
   printMessage('Ty wygrywasz!');
 }
 
-else if( computerMove == 'papier' && playerMove == 'papier'){
+else if( computerMove == 'nożyce' && playerMove == 'kamień'){
+  printMessage('Ty wygrywasz!');
+}
+
+else if( computerMove == playerMove ){
   printMessage('Remis!');
 }
-else if( computerMove == 'nożyce' && playerMove == 'papier'){
-  printMessage('Przegrałeś!');
-}
+
 else if( playerMove == 'nieznany ruch'){
   printMessage('Pomyłka!');
 }
+
+else {  
+  printMessage('Przegrywasz!');
+}
+
 
 
 
