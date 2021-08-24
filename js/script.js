@@ -1,6 +1,6 @@
-function getMoveName(argMoveId){
+function getMoveName(argMoveId) {
 
-  if (argMoveId == '1'){
+  if (argMoveId == '1') {
     return 'kamień';
   }
   if (argMoveId == '2') {
@@ -9,32 +9,27 @@ function getMoveName(argMoveId){
 
   if (argMoveId == '3') {
     return 'nożyce';
-  } 
+  }
 }
 
 
 function displayResult(argComputerMove, argPlayerMove) {
-  if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
+  if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
     printMessage('Ty wygrywasz!');
-  }
-  else if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
+  } else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
     printMessage('Ty wygrywasz!');
-  }
-  else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+  } else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
     printMessage('Ty wygrywasz!');
-  }
-  else if( argComputerMove == argPlayerMove ){
+  } else if (argComputerMove == argPlayerMove) {
     printMessage('Remis!');
-  }
-  else if( argPlayerMove == 'nieznany ruch'){
+  } else if (argPlayerMove == 'nieznany ruch') {
     printMessage('Pomyłka!');
-  }
-  else {  
+  } else {
     printMessage('Przegrywasz!');
   }
 }
 
-function playGame(playerInput){
+function playGame(playerInput) {
   clearMessages();
   let randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log('Wylosowana liczba to: ' + randomNumber);
@@ -42,6 +37,7 @@ function playGame(playerInput){
   // let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
   printMessage('Mój ruch to: ' + computerMove);
   console.log('Gracz wpisał: ' + playerInput);
+  let playerMove = getMoveName(playerInput);
   // if (playerInput == '1') {
   //   playerMove = 'kamień';
   // }
@@ -53,20 +49,20 @@ function playGame(playerInput){
   // else if(playerInput == '3') {
   //   playerMove = 'papier';
   // }
-  printMessage('Twój ruch to: ' + playerInput);
-  displayResult(computerMove, playerInput);
+  printMessage('Twój ruch to: ' + playerMove);  /*lin 56*/
+  displayResult(computerMove, playerMove);
 }
 
-document.getElementById('play-rock').addEventListener('click', function(){
-playGame('1');
-      });
+document.getElementById('play-rock').addEventListener('click', function () {
+  playGame('1');
+});
 
-document.getElementById('play-paper').addEventListener('click', function(){
-playGame('2');
-      });
+document.getElementById('play-paper').addEventListener('click', function () {
+  playGame('2');
+});
 
-document.getElementById('play-scissors').addEventListener('click', function(){
-playGame('3');
-      });
+document.getElementById('play-scissors').addEventListener('click', function () {
+  playGame('3');
+});
 
 
