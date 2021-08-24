@@ -11,7 +11,6 @@
     if (argMoveId == '3') {
       return 'nożyce';
     }
-
   }
   //
   // function getMoveName(argMoveId) {
@@ -29,7 +28,7 @@
   // }
 
 
-  function displayResult(argComputerMove, argPlayerMove) {
+  const displayResult = function (argComputerMove, argPlayerMove) {
     if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
       printMessage('Ty wygrywasz!');
     } else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
@@ -45,7 +44,7 @@
     }
   }
 
-  function playGame(playerInput) {
+  const playGame = function (playerInput) {
     clearMessages();
     const randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log('Wylosowana liczba to: ' + randomNumber);
